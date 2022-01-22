@@ -1,0 +1,8 @@
+[Desktop Entry]
+Terminal=false
+Name=cryptor
+Type=Application
+Categories=Utility;TrayIcon;
+Exec=/usr/bin/cryptor
+Icon=gtk-dialog-authentication
+Comment=Simple GUI application for gocryptfs 

@@ -4,7 +4,7 @@
 [![GitHub release](https://img.shields.io/github/v/tag/moson-mo/cryptor.svg?label=release&sort=semver)](https://github.com/moson-mo/cryptor/releases)
 [![build](https://img.shields.io/github/workflow/status/moson-mo/cryptor/build)](https://github.com/moson-mo/cryptor/actions)
 
-cryptor is a simple GUI wrapper for [gocryptfs]("https://github.com/rfjakob/gocryptfs"), written in Vala using the GTK toolkit.  
+cryptor is a simple GUI wrapper for ![gocryptfs]("https://github.com/rfjakob/gocryptfs"), written in Vala using the GTK toolkit.  
 It allows you to create an mount gocryptfs encrypted file systems via a graphical user interface.  
 Settings and "Vaults" are stored in a configuration file.
 
