@@ -8,8 +8,8 @@ cryptor is a simple GUI wrapper for [gocryptfs]("https://github.com/rfjakob/gocr
 It allows you to create an mount gocryptfs encrypted file systems via a graphical user interface.  
 Settings and "Vaults" are stored in a configuration file.
 
-[![Main window](https://github.com/moson-mo/cryptor/assets/screenshots/cryptor_main.png)]
-[![Vault window](https://github.com/moson-mo/cryptor/assets/screenshots/cryptor_vault.png)]
+![Main window](https://github.com/moson-mo/cryptor/raw/master/assets/screenshots/cryptor_main.png)
+![Vault window](https://github.com/moson-mo/cryptor/raw/master/assets/screenshots/cryptor_vault.png)
 
 #### How to build
 
