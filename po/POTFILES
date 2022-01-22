@@ -1,0 +1,5 @@
+src/ui/Utils.vala
+src/ui/CryptorWindow.vala
+src/ui/VaultWindow.vala
+resources/ui/SettingsWindow.ui
+resources/ui/CryptorWindow.ui

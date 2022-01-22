@@ -1,0 +1,5 @@
+build
+builddir
+uncrustify.cfg
+.vscode
+*.ui~

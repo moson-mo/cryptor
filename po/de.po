@@ -1,0 +1,174 @@
+# German translations for cryptor package.
+# Copyright (C) 2022 THE cryptor'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cryptor package.
+# Automatically generated, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cryptor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-22 15:28+0100\n"
+"PO-Revision-Date: 2022-01-22 11:37+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Please enter a new password:"
+msgstr "Bitte gebe ein neue Passwort ein:"
+
+msgid "Please enter the password:"
+msgstr "Bitte gebe das Passwort ein:"
+
+msgid "Please enter the password again:"
+msgstr "Bitte gebe das Passwort nochmals ein:"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Open"
+msgstr "Öffnen"
+
+msgid "Error loading vaults."
+msgstr "Fehler beim laden der Tresore"
+
+msgid "Hide"
+msgstr "Ausblenden"
+
+msgid "Show"
+msgstr "Anzeigen"
+
+msgid "Vault might be mounted already."
+msgstr "Tresor ist schon ge-mounted"
+
+msgid "Shall I retry unmounting it first?"
+msgstr "Soll ich versuchen ihn vorher zu un-mounten?"
+
+msgid "Error re-mounting vault:"
+msgstr "Fehler beim erneuten mounten des Tresors"
+
+msgid "Error mounting vault:"
+msgstr "Fehler beim mounten des Tresors"
+
+msgid "Error unmounting vault:"
+msgstr "Fehler beim unmounten des Tresors"
+
+msgid "Open directory"
+msgstr "Verzeichnis öffnen"
+
+msgid "Unmount"
+msgstr "Unmount"
+
+msgid "Mount"
+msgstr "Mount"
+
+msgid "Edit"
+msgstr "Editieren"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Unable to save configuration file:"
+msgstr "Konfigurationsdatei konnte nicht gespeichert werden:"
+
+msgid "Seems you've made changes to the configuration."
+msgstr "Scheinbar hast du Änderungen an der Konfiguration gemacht."
+
+msgid "Do you want to save them?"
+msgstr "Möchtest du sie speichern?"
+
+msgid "New vault"
+msgstr "Neuer Tresor"
+
+msgid "Edit vault"
+msgstr "Tresor editieren"
+
+msgid "Browse"
+msgstr "Durchsuchen"
+
+msgid "Directory is not empty. Please choose an empty directory."
+msgstr "Verzeichnis ist nicht leer. Bitte wähle ein leeres Verzeichnis."
+
+msgid "gocryptfs.conf file does not seem to exist."
+msgstr "Datei gocryptfs.conf scheint nicht zu existieren."
+
+msgid "Do you want to create a new vault?"
+msgstr "Willst du einen neuen Tresor erstellen?"
+
+msgid "Directory is not empty."
+msgstr "Verzeichnis ist nicht leer."
+
+msgid "Choose an empty directory to initialize a new vault."
+msgstr "Wähle ein leeres Verzeichnis um einen neuen Tresor zu erstellen."
+
+msgid "New vault has been created."
+msgstr "Neuer Tresor wurde erstellt."
+
+msgid "Error creating new vault:"
+msgstr "Fehler beim erstellen des neuen Tresors:"
+
+msgid ".gocryptfs.reverse.conf file does not seem to exist."
+msgstr "Datei .gocryptfs.reverse.conf scheint nicht zu existieren."
+
+msgid "Do you want to create a new reverse-vault?"
+msgstr "Willst du einen neuen Reverse-Tresor erstellen?"
+
+msgid "New reverse vault has been created."
+msgstr "Neuer Reverse-Tresor wurde erstellt."
+
+msgid "Error creating new reverse-vault:"
+msgstr "Fehler beim erstellen des neuen Reverse-Tresor"
+
+msgid "Vault location and mount point need to be specified."
+msgstr "Ort des Tresor's und Mountpunkt müssen ausgewählt werden."
+
+msgid "Entered passwords do not match."
+msgstr "Die eingegebenen Passwörter stimmen nicht überein."
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Unmount vaults on quit"
+msgstr "Tresore unmounten beim beenden"
+
+msgid "Autosave configuration file on quit"
+msgstr "Konfigurationsdatei automatisch speichern beim beenden"
+
+msgid "Show tray icon"
+msgstr "Tray icon anzeigen"
+
+msgid "Send to tray on close"
+msgstr "Beim schliessen nicht beenden (send to tray)"
+
+msgid "_File"
+msgstr "Datei"
+
+msgid "Add vault"
+msgstr "Tresor hinzufügen"
+
+msgid "_Help"
+msgstr "Hilfe"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Reverse"
+msgstr "Reverse"
+
+msgid "Vault"
+msgstr "Tresor"
+
+msgid "Mount point"
+msgstr "Mountpunkt"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Mounted"
+msgstr "Gemounted"

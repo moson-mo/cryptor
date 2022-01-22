@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/org/moson/cryptor">
+        <file preprocess="xml-stripblanks">ui/CryptorWindow.ui</file>
+        <file preprocess="xml-stripblanks">ui/VaultWindow.ui</file>
+        <file preprocess="xml-stripblanks">ui/SettingsWindow.ui</file>
+        <file preprocess="xml-stripblanks">ui/AboutWindow.ui</file>
+    </gresource>
+</gresources>

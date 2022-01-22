@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cryptor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cryptor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-22 15:28+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Please enter a new password:"
+msgstr ""
+
+msgid "Please enter the password:"
+msgstr ""
+
+msgid "Please enter the password again:"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Error loading vaults."
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Vault might be mounted already."
+msgstr ""
+
+msgid "Shall I retry unmounting it first?"
+msgstr ""
+
+msgid "Error re-mounting vault:"
+msgstr ""
+
+msgid "Error mounting vault:"
+msgstr ""
+
+msgid "Error unmounting vault:"
+msgstr ""
+
+msgid "Open directory"
+msgstr ""
+
+msgid "Unmount"
+msgstr ""
+
+msgid "Mount"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Unable to save configuration file:"
+msgstr ""
+
+msgid "Seems you've made changes to the configuration."
+msgstr ""
+
+msgid "Do you want to save them?"
+msgstr ""
+
+msgid "New vault"
+msgstr ""
+
+msgid "Edit vault"
+msgstr ""
+
+msgid "Browse"
+msgstr ""
+
+msgid "Directory is not empty. Please choose an empty directory."
+msgstr ""
+
+msgid "gocryptfs.conf file does not seem to exist."
+msgstr ""
+
+msgid "Do you want to create a new vault?"
+msgstr ""
+
+msgid "Directory is not empty."
+msgstr ""
+
+msgid "Choose an empty directory to initialize a new vault."
+msgstr ""
+
+msgid "New vault has been created."
+msgstr ""
+
+msgid "Error creating new vault:"
+msgstr ""
+
+msgid ".gocryptfs.reverse.conf file does not seem to exist."
+msgstr ""
+
+msgid "Do you want to create a new reverse-vault?"
+msgstr ""
+
+msgid "New reverse vault has been created."
+msgstr ""
+
+msgid "Error creating new reverse-vault:"
+msgstr ""
+
+msgid "Vault location and mount point need to be specified."
+msgstr ""
+
+msgid "Entered passwords do not match."
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Unmount vaults on quit"
+msgstr ""
+
+msgid "Autosave configuration file on quit"
+msgstr ""
+
+msgid "Show tray icon"
+msgstr ""
+
+msgid "Send to tray on close"
+msgstr ""
+
+msgid "_File"
+msgstr ""
+
+msgid "Add vault"
+msgstr ""
+
+msgid "_Help"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Reverse"
+msgstr ""
+
+msgid "Vault"
+msgstr ""
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
+msgid "Mounted"
+msgstr ""
