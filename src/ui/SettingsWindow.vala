@@ -18,7 +18,7 @@ namespace Cryptor.UI {
 
         [GtkChild]
         private unowned CheckButton check_send_to_tray;
-        
+
 
         public SettingsWindow (Window parent, Config config) {
             Object (

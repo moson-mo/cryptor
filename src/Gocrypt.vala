@@ -77,7 +77,7 @@ namespace Cryptor {
         }
 
         private static string remove_color (string str) {
-            return str.replace ("\033[31m", "").replace("\033[33m", "").replace ("\033[0m", "");
+            return str.replace ("\033[31m", "").replace ("\033[33m", "").replace ("\033[0m", "");
         }
 
         /*

@@ -9,7 +9,7 @@ namespace Cryptor {
                 flags : ApplicationFlags.FLAGS_NONE,
                 register_session: true
             );
-            Environment.set_application_name (app_name);            
+            Environment.set_application_name (app_name);
         }
 
         protected override void activate () {

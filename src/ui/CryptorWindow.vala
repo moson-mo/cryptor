@@ -65,10 +65,9 @@ namespace Cryptor.UI {
             var fdc = new FileChooserDialog (_("Save"), this, FileChooserAction.SAVE, _("Save"), ResponseType.OK, _("Cancel"), ResponseType.CANCEL);
             if (config_path == null) {
                 var confdir_path = Environment.get_user_config_dir () + "/cryptor/";
-                var confdir = File.new_for_path (confdir_path);
-                if (!confdir.query_exists ()) {
+                if (File.new_for_path (confdir_path).query_exists ()) {
                     try {
-                        confdir.make_directory_with_parents ();
+                        DirUtils.create_with_parents (confdir_path, 0755);
                         fdc.set_current_folder (confdir_path);
                     } catch (Error e) {
                     }
