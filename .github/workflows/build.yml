@@ -1,0 +1,28 @@
+name: build
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: archlinux:latest
+
+    steps:
+    - name: Full upgrade
+      run: |
+         echo "Server = https://mirror.moson.org/arch/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+         pacman -Syyu --noconfirm
+         
+    - name: Install Dependencies
+      run: |
+        pacman -S vala meson libgee gtk3 json-glib --noconfirm
+        
+    - uses: actions/checkout@v2
+    - name: Build
+      run: |
+        arch-meson build
+        meson compile -C build
+        meson install -C build
