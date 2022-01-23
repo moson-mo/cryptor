@@ -5,7 +5,7 @@ namespace Cryptor.UI {
     [GtkTemplate (ui = "/org/moson/cryptor/ui/CryptorWindow.ui")]
     public class CryptorWindow : ApplicationWindow {
         private Config config;
-        private StatusIcon? tray;
+        private StatusIcon ? tray;
         private string ? _config_path;
         private string ? config_path {
             get {
@@ -63,8 +63,19 @@ namespace Cryptor.UI {
         [GtkCallback]
         private void on_mi_save_as_activate (Gtk.MenuItem ? mi) {
             var fdc = new FileChooserDialog (_("Save"), this, FileChooserAction.SAVE, _("Save"), ResponseType.OK, _("Cancel"), ResponseType.CANCEL);
-            fdc.set_do_overwrite_confirmation (true);
+            if (config_path == null) {
+                var confdir_path = Environment.get_user_config_dir () + "/cryptor/";
+                var confdir = File.new_for_path (confdir_path);
+                if (!confdir.query_exists ()) {
+                    try {
+                        confdir.make_directory_with_parents ();
+                        fdc.set_current_folder (confdir_path);
+                    } catch (Error e) {
+                    }
+                }
+            }
             fdc.set_current_name ("cryptor.conf");
+            fdc.set_do_overwrite_confirmation (true);
             fdc.set_position (WindowPosition.CENTER_ON_PARENT);
             fdc.set_filter (get_conf_filter ());
 
@@ -128,7 +139,7 @@ namespace Cryptor.UI {
 
         [GtkCallback]
         private void on_mi_about_activate (Gtk.MenuItem mi) {
-            var win = new AboutWindow (this);            
+            var win = new AboutWindow (this);
             win.response.connect ((dialog, response) => {
                 if (response == ResponseType.DELETE_EVENT) {
                     dialog.close ();
@@ -140,7 +151,7 @@ namespace Cryptor.UI {
         [GtkCallback]
         private void on_mi_settings_activate (Gtk.MenuItem mi) {
             var win = new SettingsWindow (this, config);
-            
+
             win.destroy.connect (() => {
                 show_tray_icon ();
             });
@@ -152,7 +163,7 @@ namespace Cryptor.UI {
             if (e.button == Gdk.BUTTON_SECONDARY) {
                 show_menu ();
             }
-            return false;        
+            return false;
         }
 
         [GtkCallback]
@@ -189,7 +200,7 @@ namespace Cryptor.UI {
                     });
                     menu.append (show);
                     var quit = UI.Utils.get_image_menu_item ("gtk-quit", "Quit");
-                    quit.activate.connect (()=> {
+                    quit.activate.connect (() => {
                         save_before_quit (null, null);
                         this.destroy ();
                     });
@@ -197,7 +208,7 @@ namespace Cryptor.UI {
                     menu.show_all ();
                     menu.popup_at_pointer (null);
                 }
-                
+
                 return false;
             });
         }
@@ -327,7 +338,7 @@ namespace Cryptor.UI {
             }
         }
 
-        private bool save_before_quit (Widget? w, Gdk.EventAny? ev) {
+        private bool save_before_quit (Widget ? w, Gdk.EventAny ? ev) {
             if (config.send_to_tray && w != null && tray != null) {
                 this.hide ();
                 return true;
