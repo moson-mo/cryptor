@@ -14,7 +14,7 @@ namespace Cryptor {
         public Config () {
             changes_made = false;
             umount_on_quit = true;
-            autosave_on_quit = false;
+            autosave_on_quit = true;
             show_tray_icon = false;
             send_to_tray = false;
             vaults = new Gee.ArrayList<Vault> ();

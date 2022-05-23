@@ -50,6 +50,12 @@ namespace Cryptor.UI {
             var area = dialog.get_content_area ();
             entry.invisible_char = '*';
             entry.visibility = false;
+            entry.key_release_event.connect ((e) => {
+                if (e.keyval == Gdk.Key.Return) {
+                    dialog.response (Gtk.ResponseType.OK);
+                }
+                return true;
+            });
             area.pack_end (entry, false, false, 0);
 
             dialog.show_all ();

@@ -33,20 +33,25 @@ namespace Cryptor.UI {
             );
 
             config = new Config ();
-            string[] config_files = { Environment.get_user_config_dir () + "/cryptor/cryptor.conf", Environment.get_current_dir () + "/cryptor.conf" };
-            foreach (var file in config_files) {
-                if (File.new_for_path (file).query_exists ()) {
-                    try {
-                        config = Config.from_file (file);
-                        if (config.vaults != null) {
-                            config_path = file;
-                            sync_treeview_from_conf ();
-                        } else {
-                            config.vaults = new Gee.ArrayList<Vault> ();
-                        }
-                    } catch (Error e) {
-                        config = new Config ();
+            var dir = Environment.get_user_config_dir () + "/cryptor/";
+            var file = dir + "cryptor.conf";
+            if (File.new_for_path (file).query_exists ()) {
+                try {
+                    config = Config.from_file (file);
+                    if (config.vaults != null) {
+                        config_path = file;
+                        sync_treeview_from_conf ();
+                    } else {
+                        config.vaults = new Gee.ArrayList<Vault> ();
                     }
+                } catch (Error e) {
+                }
+            } else {
+                try {
+                    DirUtils.create_with_parents (dir, 0755);
+                    config.save_to_file (file);
+                    config_path = file;
+                } catch (Error e) {                    
                 }
             }
             this.delete_event.connect (save_before_quit);
@@ -65,12 +70,15 @@ namespace Cryptor.UI {
             var fdc = new FileChooserDialog (_("Save"), this, FileChooserAction.SAVE, _("Save"), ResponseType.OK, _("Cancel"), ResponseType.CANCEL);
             if (config_path == null) {
                 var confdir_path = Environment.get_user_config_dir () + "/cryptor/";
-                if (File.new_for_path (confdir_path).query_exists ()) {
+                var confdir = File.new_for_path (confdir_path);
+                if (!confdir.query_exists ()) {
                     try {
-                        DirUtils.create_with_parents (confdir_path, 0755);
+                        confdir.make_directory ();
                         fdc.set_current_folder (confdir_path);
                     } catch (Error e) {
                     }
+                } else {
+                    fdc.set_current_folder (confdir_path);
                 }
             }
             fdc.set_current_name ("cryptor.conf");
