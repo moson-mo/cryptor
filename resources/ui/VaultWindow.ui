@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.2 -->
+<!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkImage" id="image_open">
@@ -14,15 +14,19 @@
   </object>
   <object class="GtkListStore" id="list_store_mode">
     <columns>
+      <!-- column-name ModeID -->
+      <column type="gchararray"/>
       <!-- column-name Mode -->
       <column type="gchararray"/>
     </columns>
     <data>
       <row>
-        <col id="0" translatable="yes">Read-Write</col>
+        <col id="0">rw</col>
+        <col id="1" translatable="yes">Read-Write</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Read-Only</col>
+        <col id="0">r</col>
+        <col id="1" translatable="yes">Read-Only</col>
       </row>
     </data>
   </object>
@@ -231,7 +235,9 @@
                 <property name="margin-end">100</property>
                 <property name="model">list_store_mode</property>
                 <property name="has-entry">True</property>
-                <property name="entry-text-column">0</property>
+                <property name="entry-text-column">1</property>
+                <property name="id-column">0</property>
+                <property name="active-id">rw</property>
                 <child internal-child="entry">
                   <object class="GtkEntry" id="entry_mode">
                     <property name="can-focus">False</property>

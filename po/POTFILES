@@ -3,3 +3,5 @@ src/ui/CryptorWindow.vala
 src/ui/VaultWindow.vala
 resources/ui/SettingsWindow.ui
 resources/ui/CryptorWindow.ui
+resources/ui/AboutWindow.ui
+resources/ui/VaultWindow.ui

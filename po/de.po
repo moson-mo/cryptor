@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cryptor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-22 15:28+0100\n"
+"POT-Creation-Date: 2023-09-15 14:08+0200\n"
 "PO-Revision-Date: 2022-01-22 11:37+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,6 +25,9 @@ msgstr "Bitte gebe das Passwort ein:"
 
 msgid "Please enter the password again:"
 msgstr "Bitte gebe das Passwort nochmals ein:"
+
+msgid "Config file"
+msgstr "Konfigurationsdatei"
 
 msgid "Save"
 msgstr "Speichern"
@@ -44,18 +47,24 @@ msgstr "Ausblenden"
 msgid "Show"
 msgstr "Anzeigen"
 
+msgid "Quit"
+msgstr "Beenden"
+
 msgid "Vault might be mounted already."
 msgstr "Tresor ist schon ge-mounted"
 
 msgid "Shall I retry unmounting it first?"
 msgstr "Soll ich versuchen ihn vorher zu un-mounten?"
 
+#, c-format
 msgid "Error re-mounting vault:"
 msgstr "Fehler beim erneuten mounten des Tresors"
 
+#, c-format
 msgid "Error mounting vault:"
 msgstr "Fehler beim mounten des Tresors"
 
+#, c-format
 msgid "Error unmounting vault:"
 msgstr "Fehler beim unmounten des Tresors"
 
@@ -74,9 +83,17 @@ msgstr "Editieren"
 msgid "Remove"
 msgstr "Entfernen"
 
+msgid "Read-Only"
+msgstr "Nur Lesen"
+
+msgid "Read-Write"
+msgstr "Lesen & Schreiben"
+
+#, c-format
 msgid "Unable to save configuration file:"
 msgstr "Konfigurationsdatei konnte nicht gespeichert werden:"
 
+#, c-format
 msgid "Seems you've made changes to the configuration."
 msgstr "Scheinbar hast du Änderungen an der Konfiguration gemacht."
 
@@ -95,12 +112,14 @@ msgstr "Durchsuchen"
 msgid "Directory is not empty. Please choose an empty directory."
 msgstr "Verzeichnis ist nicht leer. Bitte wähle ein leeres Verzeichnis."
 
+#, c-format
 msgid "gocryptfs.conf file does not seem to exist."
 msgstr "Datei gocryptfs.conf scheint nicht zu existieren."
 
 msgid "Do you want to create a new vault?"
 msgstr "Willst du einen neuen Tresor erstellen?"
 
+#, c-format
 msgid "Directory is not empty."
 msgstr "Verzeichnis ist nicht leer."
 
@@ -110,9 +129,11 @@ msgstr "Wähle ein leeres Verzeichnis um einen neuen Tresor zu erstellen."
 msgid "New vault has been created."
 msgstr "Neuer Tresor wurde erstellt."
 
+#, c-format
 msgid "Error creating new vault:"
 msgstr "Fehler beim erstellen des neuen Tresors:"
 
+#, c-format
 msgid ".gocryptfs.reverse.conf file does not seem to exist."
 msgstr "Datei .gocryptfs.reverse.conf scheint nicht zu existieren."
 
@@ -122,6 +143,7 @@ msgstr "Willst du einen neuen Reverse-Tresor erstellen?"
 msgid "New reverse vault has been created."
 msgstr "Neuer Reverse-Tresor wurde erstellt."
 
+#, c-format
 msgid "Error creating new reverse-vault:"
 msgstr "Fehler beim erstellen des neuen Reverse-Tresor"
 
@@ -172,3 +194,15 @@ msgstr "Modus"
 
 msgid "Mounted"
 msgstr "Gemounted"
+
+msgid "About"
+msgstr "Über"
+
+msgid "Website"
+msgstr "Webseite"
+
+msgid "Browse..."
+msgstr "Durchsuchen..."
+
+msgid "Vault location"
+msgstr "Ort des Tresor's"

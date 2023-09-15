@@ -13,7 +13,7 @@ namespace Cryptor.UI {
             } set {
                 _config_path = value;
                 if (label_status != null) {
-                    label_status.label = "Config file: " + value;
+                    label_status.label = _("Config file") + ": " + value;
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace Cryptor.UI {
                     DirUtils.create_with_parents (dir, 0755);
                     config.save_to_file (file);
                     config_path = file;
-                } catch (Error e) {                    
+                } catch (Error e) {
                 }
             }
             this.delete_event.connect (save_before_quit);
@@ -206,7 +206,7 @@ namespace Cryptor.UI {
                         }
                     });
                     menu.append (show);
-                    var quit = UI.Utils.get_image_menu_item ("gtk-quit", "Quit");
+                    var quit = UI.Utils.get_image_menu_item ("gtk-quit", _("Quit"));
                     quit.activate.connect (() => {
                         save_before_quit (null, null);
                         this.destroy ();
@@ -232,7 +232,7 @@ namespace Cryptor.UI {
                     return;
                 }
                 try {
-                    Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "Read-Only"), vault.reverse);
+                    Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse);
                     vault.is_mounted = true;
                     sync_treeview_from_conf ();
                 } catch (Error e) {
@@ -240,7 +240,7 @@ namespace Cryptor.UI {
                         if (Utils.show_question (this, "%s\n\n%s\n%s".printf (e.message, _("Vault might be mounted already."), _("Shall I retry unmounting it first?"))) == ResponseType.YES) {
                             try {
                                 Gocrypt.unmount_vault (vault.mount_point);
-                                Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "Read-Only"), vault.reverse);
+                                Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse);
                                 vault.is_mounted = true;
                                 sync_treeview_from_conf ();
                             } catch (Error e) {
@@ -335,12 +335,16 @@ namespace Cryptor.UI {
             list_store.clear ();
             foreach (var v in config.vaults) {
                 TreeIter iter;
+                var mode = _("Read-Only");
+                if (v.mode == "rw" || v.mode == "Read-Write") {
+                    mode = _("Read-Write");
+                }
                 list_store.append (out iter);
                 list_store.set_value (iter, 0, v.name);
                 list_store.set_value (iter, 1, v.reverse);
                 list_store.set_value (iter, 2, v.path);
                 list_store.set_value (iter, 3, v.mount_point);
-                list_store.set_value (iter, 4, v.mode);
+                list_store.set_value (iter, 4, mode);
                 list_store.set_value (iter, 5, v.is_mounted);
             }
         }

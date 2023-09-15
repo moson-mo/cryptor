@@ -37,7 +37,7 @@ namespace Cryptor.UI {
                 entry_name.text = v.name;
                 entry_vault.text = v.path;
                 entry_mountpoint.text = v.mount_point;
-                entry_mode.text = v.mode;
+                combo_mode.active_id = v.mode;
             }
             if (row == -1) {
                 this.title = _("New vault");
@@ -155,7 +155,7 @@ namespace Cryptor.UI {
             v.name = entry_name.text;
             v.path = entry_vault.text;
             v.mount_point = entry_mountpoint.text;
-            v.mode = entry_mode.text;
+            v.mode = combo_mode.active_id;
             v.reverse = check_reverse.active;
 
             config.changes_made = true;
@@ -168,7 +168,7 @@ namespace Cryptor.UI {
             entry_vault.text = "";
             entry_mountpoint.text = "";
             if (tb.active) {
-                entry_mode.text = "Read-Write";
+                combo_mode.active_id = "rw";
                 entry_mode.sensitive = false;
                 combo_mode.sensitive = false;
             } else {
