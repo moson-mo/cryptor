@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cryptor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cryptor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-15 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Dejan <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Please enter a new password:"
+msgstr "Пожалуйста, введите новый пароль:"
+
+msgid "Please enter the password:"
+msgstr "Пожалуйста, введите пароль:"
+
+msgid "Please enter the password again:"
+msgstr "Пожалуйста, повторите пароль:"
+
+msgid "Config file"
+msgstr "Конфигурационный файл"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Open"
+msgstr "Открыть"
+
+msgid "Error loading vaults."
+msgstr "При загрузке томов произошла ошибка."
+
+msgid "Hide"
+msgstr "Скрыть"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "Quit"
+msgstr "Выйти"
+
+msgid "Vault might be mounted already."
+msgstr "Возможно, том уже подключён."
+
+msgid "Shall I retry unmounting it first?"
+msgstr "Повторить попытку отключить том?"
+
+#, c-format
+msgid "Error re-mounting vault:"
+msgstr "При повторном подключении тома произошла ошибка:"
+
+#, c-format
+msgid "Error mounting vault:"
+msgstr "При подключении тома произошла ошибка:"
+
+#, c-format
+msgid "Error unmounting vault:"
+msgstr "При отключении тома произошла ошибка:"
+
+msgid "Open directory"
+msgstr "Открыть каталог"
+
+msgid "Unmount"
+msgstr "Отключить"
+
+msgid "Mount"
+msgstr "Подключить"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Read-Only"
+msgstr "Только для чтения"
+
+msgid "Read-Write"
+msgstr "Чтение и запись"
+
+#, c-format
+msgid "Unable to save configuration file:"
+msgstr "Невозможно сохранить файл конфигурации:"
+
+#, c-format
+msgid "Seems you've made changes to the configuration."
+msgstr "Похоже, что вы внесли изменения в конфигурацию."
+
+msgid "Do you want to save them?"
+msgstr "Хотите сохранить?"
+
+msgid "New vault"
+msgstr "Новый том"
+
+msgid "Edit vault"
+msgstr "Редактировать том"
+
+msgid "Browse"
+msgstr "Просмотреть"
+
+msgid "Directory is not empty. Please choose an empty directory."
+msgstr "Каталог не пуст. Пожалуйста, выберите пустой каталог."
+
+#, c-format
+msgid "gocryptfs.conf file does not seem to exist."
+msgstr "похоже, файл gocryptfs.conf не существует."
+
+msgid "Do you want to create a new vault?"
+msgstr "Хотите создать новый том?"
+
+#, c-format
+msgid "Directory is not empty."
+msgstr "Каталог не пуст."
+
+msgid "Choose an empty directory to initialize a new vault."
+msgstr "Выберите пустой каталог для инициализации нового тома."
+
+msgid "New vault has been created."
+msgstr "Новый том создан."
+
+#, c-format
+msgid "Error creating new vault:"
+msgstr "При создании нового тома произошла ошибка:"
+
+#, c-format
+msgid ".gocryptfs.reverse.conf file does not seem to exist."
+msgstr "похоже, файл .gocryptfs.reverse.conf не существует."
+
+msgid "Do you want to create a new reverse-vault?"
+msgstr "Хотите создать новый обратный том?"
+
+msgid "New reverse vault has been created."
+msgstr "Создан новый обратный том."
+
+#, c-format
+msgid "Error creating new reverse-vault:"
+msgstr "При создании нового обратного тома произошла ошибка:"
+
+msgid "Vault location and mount point need to be specified."
+msgstr "Необходимо указать путь к тому и точку монтирования."
+
+msgid "Entered passwords do not match."
+msgstr "Пароли не совпадают."
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Unmount vaults on quit"
+msgstr "Отключить тома при выходе"
+
+msgid "Autosave configuration file on quit"
+msgstr "Сохранять файл конфигурации при выходе"
+
+msgid "Show tray icon"
+msgstr "Показать значок в трее"
+
+msgid "Send to tray on close"
+msgstr "Свернуть в трей при закрытии"
+
+msgid "_File"
+msgstr "_Файл"
+
+msgid "Add vault"
+msgstr "Добавить том"
+
+msgid "_Help"
+msgstr "_Помощь"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Reverse"
+msgstr "Обратный"
+
+msgid "Vault"
+msgstr "Том"
+
+msgid "Mount point"
+msgstr "Точка монтирования"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "Mounted"
+msgstr "Подключён"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "Website"
+msgstr "Веб-сайт"
+
+msgid "Browse..."
+msgstr "Обзор..."
+
+msgid "Vault location"
+msgstr "Путь к тому"
