@@ -6,3 +6,5 @@ Categories=Utility;TrayIcon;
 Exec=/usr/bin/cryptor
 Icon=gtk-dialog-authentication
 Comment=Simple GUI application for gocryptfs 
+Comment[de]=Einfache GUI-Anwendung für gocryptfs
+Comment[ru]=Простое приложение для работы с gocryptfs
