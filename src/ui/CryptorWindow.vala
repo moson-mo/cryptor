@@ -57,9 +57,13 @@ namespace Cryptor.UI {
             this.delete_event.connect (save_before_quit);
 
             show_tray_icon ();
+        }
 
+        public void show_or_not_show () {
             if (config.start_minimized && tray != null) {
                 this.hide ();
+            } else {
+                this.show_all ();
             }
         }
 
