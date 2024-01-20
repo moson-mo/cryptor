@@ -32,7 +32,7 @@ namespace Cryptor.UI {
             check_autosave.active = config.autosave_on_quit;
             check_show_tray.active = config.show_tray_icon;
             check_send_to_tray.active = config.send_to_tray;
-            check_start_minimized = config.start_minimized;
+            check_start_minimized.active = config.start_minimized;
             prev_send_to_tray = config.send_to_tray;
             prev_start_minimized = config.start_minimized;
         }
