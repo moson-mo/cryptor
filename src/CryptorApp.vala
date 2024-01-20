@@ -14,7 +14,7 @@ namespace Cryptor {
 
         protected override void activate () {
             var win = new UI.CryptorWindow (this);
-            win.show_all ();
+            win.show_or_not_show ();
         }
 
         public static int main (string[] args) {
