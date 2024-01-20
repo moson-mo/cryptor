@@ -58,7 +58,7 @@ namespace Cryptor.UI {
 
             show_tray_icon ();
 
-            if (config.start_minimized && w != null && tray != null) {
+            if (config.start_minimized && tray != null) {
                 this.hide ();
             }
         }
