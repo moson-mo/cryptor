@@ -57,6 +57,10 @@ namespace Cryptor.UI {
             this.delete_event.connect (save_before_quit);
 
             show_tray_icon ();
+
+            if (config.start_minimized && w != null && tray != null) {
+                this.hide ();
+            }
         }
 
         [GtkCallback]
