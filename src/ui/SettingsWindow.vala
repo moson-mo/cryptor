@@ -6,6 +6,7 @@ namespace Cryptor.UI {
     public class SettingsWindow : Dialog {
         private Config config;
         bool prev_send_to_tray;
+        bool prev_start_minimized;
 
         [GtkChild]
         private unowned CheckButton check_unmount;
