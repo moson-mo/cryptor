@@ -8,6 +8,7 @@ namespace Cryptor {
         public bool autosave_on_quit { get; set; }
         public bool show_tray_icon { get; set; }
         public bool send_to_tray { get; set; }
+        public bool start_minimized { get; set; }
 
         public Gee.ArrayList<Vault> vaults { get; set; }
 
@@ -17,6 +18,7 @@ namespace Cryptor {
             autosave_on_quit = true;
             show_tray_icon = false;
             send_to_tray = false;
+            start_minimized = false;
             vaults = new Gee.ArrayList<Vault> ();
         }
 

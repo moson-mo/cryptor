@@ -59,6 +59,14 @@ namespace Cryptor.UI {
             show_tray_icon ();
         }
 
+        public void show_or_not_show () {
+            if (config.start_minimized && tray != null) {
+                this.hide ();
+            } else {
+                this.show_all ();
+            }
+        }
+
         [GtkCallback]
         private void on_mi_quit_activate (Gtk.MenuItem mi) {
             save_before_quit (null, null);
