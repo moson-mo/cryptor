@@ -25,6 +25,9 @@ namespace Cryptor.UI {
         [GtkChild]
         private unowned CheckButton check_reverse;
 
+        [GtkChild]
+        private unowned Entry entry_custom_options;
+
         public VaultWindow (Window parent, int row, Config config) {
             Object (
                 transient_for: parent
@@ -38,6 +41,7 @@ namespace Cryptor.UI {
                 entry_vault.text = v.path;
                 entry_mountpoint.text = v.mount_point;
                 combo_mode.active_id = v.mode;
+                entry_custom_options.text = v.custom_options;
             }
             if (row == -1) {
                 this.title = _("New vault");
@@ -157,6 +161,7 @@ namespace Cryptor.UI {
             v.mount_point = entry_mountpoint.text;
             v.mode = combo_mode.active_id;
             v.reverse = check_reverse.active;
+            v.custom_options = entry_custom_options.text;
 
             config.changes_made = true;
 

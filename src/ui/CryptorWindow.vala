@@ -240,7 +240,7 @@ namespace Cryptor.UI {
                     return;
                 }
                 try {
-                    Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse);
+                    Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse, vault.custom_options);
                     vault.is_mounted = true;
                     sync_treeview_from_conf ();
                 } catch (Error e) {
@@ -248,7 +248,7 @@ namespace Cryptor.UI {
                         if (Utils.show_question (this, "%s\n\n%s\n%s".printf (e.message, _("Vault might be mounted already."), _("Shall I retry unmounting it first?"))) == ResponseType.YES) {
                             try {
                                 Gocrypt.unmount_vault (vault.mount_point);
-                                Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse);
+                                Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse, vault.custom_options);
                                 vault.is_mounted = true;
                                 sync_treeview_from_conf ();
                             } catch (Error e) {

@@ -27,7 +27,7 @@ namespace Cryptor {
             }
         }
 
-        public static void mount_vault (string path, string mountpoint, string password, bool ro, bool reverse) throws Error {
+        public static void mount_vault (string path, string mountpoint, string password, bool ro, bool reverse, string custom_options) throws Error {
             string standard_error;
             int status;
 
@@ -38,6 +38,9 @@ namespace Cryptor {
             }
             if (reverse) {
                 cmd += "-reverse ";
+            }
+            if (custom_options != "") {
+                cmd += custom_options + " ";
             }
             cmd += " -passfile " + pfile.get_path () + " -- " + path + " " + mountpoint;
             try {
