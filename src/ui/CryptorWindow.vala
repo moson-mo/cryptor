@@ -1,5 +1,6 @@
 using Gtk;
 using Cryptor.Data;
+using GLib;
 
 namespace Cryptor.UI {
     [GtkTemplate (ui = "/org/moson/cryptor/ui/CryptorWindow.ui")]
@@ -55,7 +56,6 @@ namespace Cryptor.UI {
                 }
             }
             this.delete_event.connect (save_before_quit);
-
             show_tray_icon ();
         }
 
@@ -186,6 +186,11 @@ namespace Cryptor.UI {
             show_vault_window (-1);
         }
 
+        [GtkCallback]
+        private void on_mi_refresh_activate (Gtk.MenuItem mi) {
+            sync_treeview_from_conf ();
+        }
+
         private void show_tray_icon () {
             if (!config.show_tray_icon) {
                 if (tray != null) {
@@ -201,6 +206,7 @@ namespace Cryptor.UI {
                         this.hide ();
                     } else {
                         this.show_all ();
+                        sync_treeview_from_conf ();
                     }
                 } else if (ev.button == 3) {
                     var menu = new Gtk.Menu ();
@@ -211,6 +217,7 @@ namespace Cryptor.UI {
                             this.hide ();
                         } else {
                             this.show_all ();
+                            sync_treeview_from_conf ();
                         }
                     });
                     menu.append (show);
@@ -241,7 +248,6 @@ namespace Cryptor.UI {
                 }
                 try {
                     Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse, vault.custom_options);
-                    vault.is_mounted = true;
                     sync_treeview_from_conf ();
                 } catch (Error e) {
                     if (e.message.contains ("fusermount exited with code 256")) {
@@ -249,7 +255,6 @@ namespace Cryptor.UI {
                             try {
                                 Gocrypt.unmount_vault (vault.mount_point);
                                 Gocrypt.mount_vault (vault.path, vault.mount_point, password, (vault.mode == "r"), vault.reverse, vault.custom_options);
-                                vault.is_mounted = true;
                                 sync_treeview_from_conf ();
                             } catch (Error e) {
                                 Utils.show_error (this, "%s\n%s".printf (_("Error re-mounting vault:"), e.message));
@@ -262,7 +267,6 @@ namespace Cryptor.UI {
             } else {
                 try {
                     Gocrypt.unmount_vault (vault.mount_point);
-                    vault.is_mounted = false;
                     sync_treeview_from_conf ();
                 } catch (Error e) {
                     Utils.show_error (this, "%s\n%s".printf (_("Error unmounting vault:"), e.message));
@@ -340,6 +344,10 @@ namespace Cryptor.UI {
         }
 
         private void sync_treeview_from_conf () {
+            foreach (var vault in config.vaults) {
+                var entry = new UnixMountEntry (vault.mount_point, null);
+                vault.is_mounted = entry != null;
+            }
             list_store.clear ();
             foreach (var v in config.vaults) {
                 TreeIter iter;
