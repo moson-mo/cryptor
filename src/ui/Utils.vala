@@ -33,6 +33,19 @@ namespace Cryptor.UI {
             dialog.destroy ();
         }
 
+        public static void show_info_textbox (Window parent, string title, string message) {
+            var dialog = new MessageDialog (parent, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "%s", title);
+            var area = dialog.get_content_area ();
+            var entry = new Entry ();
+            entry.editable = false;
+            entry.width_chars = message.length;
+            entry.text = message;
+            area.pack_end (entry, false, false, 0);
+            dialog.show_all ();
+            dialog.run ();
+            dialog.destroy ();
+        }
+
         public static string ? show_password_entry (Window parent, bool reenter, bool newpw) {
             string message;
             string ? ret = null;

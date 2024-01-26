@@ -30,7 +30,7 @@ namespace Cryptor.UI {
 
         public CryptorWindow (Gtk.Application app) {
             Object (
-                application: app
+                application : app
             );
 
             config = new Config ();
@@ -293,6 +293,19 @@ namespace Cryptor.UI {
             edit.activate.connect (() => {
                 show_vault_window (get_selected_rownumber ());
             });
+            var mkey = Utils.get_image_menu_item ("gtk-justify-fill", _("Show Master key"));
+            mkey.activate.connect (() => {
+                var password = Utils.show_password_entry (this, false, false);
+                if (password == null) {
+                    return;
+                }
+                try {
+                    var key = Gocrypt.get_master_key (vault.path, password);
+                    Utils.show_info_textbox (this, _("Master key:"), key.replace ("\n", ""));
+                } catch (Error e) {
+                    Utils.show_error (this, e.message);
+                }
+            });
             var remove = Utils.get_image_menu_item ("gtk-remove", _("Remove"));
             remove.sensitive = !vault.is_mounted;
             remove.activate.connect (() => {
@@ -301,6 +314,7 @@ namespace Cryptor.UI {
             });
             menu.add (open);
             menu.add (mount);
+            menu.add (mkey);
             menu.add (edit);
             menu.add (remove);
             menu.show_all ();

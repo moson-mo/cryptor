@@ -70,6 +70,24 @@ namespace Cryptor {
             }
         }
 
+        public static string ? get_master_key (string path, string password) throws Error {
+            string ? standard_output, standard_error;
+            string[] cmd = { "gocryptfs-xray", "-dumpmasterkey", path + "/gocryptfs.conf" };
+
+            var sp = new Subprocess.newv (cmd, SubprocessFlags.STDIN_PIPE | SubprocessFlags.STDERR_PIPE | SubprocessFlags.STDOUT_PIPE);
+            sp.communicate_utf8 (password + "\n", null, out standard_output, out standard_error);
+            var status = sp.get_exit_status ();
+
+            if (standard_error != null && standard_error != "") {
+                throw new Error (Quark.from_string ("Cryptor"), status, standard_error);
+            }
+            if (status != 0) {
+                throw new Error (Quark.from_string ("Cryptor"), status, standard_output);
+            }
+
+            return standard_output;
+        }
+
         private static File write_password_file (string password) throws Error {
             FileIOStream ps;
             var temp_file = File.new_tmp (null, out ps);
