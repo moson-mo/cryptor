@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cryptor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 14:08+0200\n"
+"POT-Creation-Date: 2024-01-27 09:33+0100\n"
 "PO-Revision-Date: 2022-01-22 11:37+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -79,6 +79,12 @@ msgstr "Mount"
 
 msgid "Edit"
 msgstr "Editieren"
+
+msgid "Show Master key"
+msgstr "Zeige Hauptschlüssel"
+
+msgid "Master key:"
+msgstr "Hauptschlüssel:"
 
 msgid "Remove"
 msgstr "Entfernen"
@@ -168,11 +174,17 @@ msgstr "Tray icon anzeigen"
 msgid "Send to tray on close"
 msgstr "Beim schliessen nicht beenden (send to tray)"
 
+msgid "Start minimized to tray"
+msgstr "Minimiert starten"
+
 msgid "_File"
 msgstr "Datei"
 
 msgid "Add vault"
 msgstr "Tresor hinzufügen"
+
+msgid "_View"
+msgstr "Ansicht"
 
 msgid "_Help"
 msgstr "Hilfe"
@@ -206,3 +218,6 @@ msgstr "Durchsuchen..."
 
 msgid "Vault location"
 msgstr "Ort des Tresor's"
+
+msgid "Custom mount options"
+msgstr "Benutzerdefinierte Optionen"

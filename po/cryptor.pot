@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cryptor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 14:08+0200\n"
+"POT-Creation-Date: 2024-01-27 09:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,6 +78,12 @@ msgid "Mount"
 msgstr ""
 
 msgid "Edit"
+msgstr ""
+
+msgid "Show Master key"
+msgstr ""
+
+msgid "Master key:"
 msgstr ""
 
 msgid "Remove"
@@ -168,10 +174,16 @@ msgstr ""
 msgid "Send to tray on close"
 msgstr ""
 
+msgid "Start minimized to tray"
+msgstr ""
+
 msgid "_File"
 msgstr ""
 
 msgid "Add vault"
+msgstr ""
+
+msgid "_View"
 msgstr ""
 
 msgid "_Help"
@@ -205,4 +217,7 @@ msgid "Browse..."
 msgstr ""
 
 msgid "Vault location"
+msgstr ""
+
+msgid "Custom mount options"
 msgstr ""
