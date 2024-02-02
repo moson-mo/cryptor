@@ -12,6 +12,12 @@ namespace Cryptor.UI {
         private unowned CheckButton check_unmount;
 
         [GtkChild]
+        private unowned CheckButton check_unmount2;
+
+        [GtkChild]
+        private unowned CheckButton check_unmount3;
+
+        [GtkChild]
         private unowned CheckButton check_autosave;
 
         [GtkChild]
@@ -29,6 +35,8 @@ namespace Cryptor.UI {
             );
             this.config = config;
             check_unmount.active = config.umount_on_quit;
+            check_unmount2.active = config.unmount_on_sleep;
+            check_unmount3.active = config.unmount_on_lock;
             check_autosave.active = config.autosave_on_quit;
             check_show_tray.active = config.show_tray_icon;
             check_send_to_tray.active = config.send_to_tray;
@@ -40,6 +48,8 @@ namespace Cryptor.UI {
         [GtkCallback]
         private void on_save_settings_clicked (Button bt) {
             config.umount_on_quit = check_unmount.active;
+            config.unmount_on_sleep = check_unmount2.active;
+            config.unmount_on_lock = check_unmount3.active;
             config.autosave_on_quit = check_autosave.active;
             config.show_tray_icon = check_show_tray.active;
             config.send_to_tray = check_send_to_tray.active;

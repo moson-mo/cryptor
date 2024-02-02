@@ -3,10 +3,24 @@ using Cryptor.Data;
 using GLib;
 
 namespace Cryptor.UI {
+
+    [DBus (name = "org.freedesktop.login1.Manager")]
+    public interface logindInterface : Object {
+        public abstract string GetSession(string id) throws GLib.Error;
+        public signal void prepare_for_sleep (bool about_to_suspend);
+    }
+
+    [DBus (name = "org.freedesktop.login1.Session")]
+    public interface Session : Object {
+        public abstract signal void Lock();
+    }
+
     [GtkTemplate (ui = "/org/moson/cryptor/ui/CryptorWindow.ui")]
     public class CryptorWindow : ApplicationWindow {
         private Config config;
         private StatusIcon ? tray;
+        private logindInterface? logind;
+        private Session? session;
         private string ? _config_path;
         private string ? config_path {
             get {
@@ -57,6 +71,30 @@ namespace Cryptor.UI {
             }
             this.delete_event.connect (save_before_quit);
             show_tray_icon ();
+
+            try {
+                logind = Bus.get_proxy_sync(
+                    BusType.SYSTEM,
+                    "org.freedesktop.login1",
+                    "/org/freedesktop/login1"
+                );
+                logind.prepare_for_sleep.connect ((about_to_suspend) => {
+                    if (about_to_suspend && config.unmount_on_sleep) {
+                        unmount_all ();
+                    }
+                });
+                session = Bus.get_proxy_sync(
+                    BusType.SYSTEM,
+                    "org.freedesktop.login1",
+                    this.logind.GetSession(Environment.get_variable("XDG_SESSION_ID"))
+                );
+                session.Lock.connect(() => {
+                    if (config.unmount_on_lock) {
+                        unmount_all ();
+                    }
+                });
+            } catch (Error e) {
+            }
         }
 
         public void show_or_not_show () {
@@ -379,20 +417,24 @@ namespace Cryptor.UI {
             }
         }
 
+        private void unmount_all () {
+            foreach (var vault in config.vaults) {
+                if (vault.is_mounted) {
+                    try {
+                        Gocrypt.unmount_vault (vault.mount_point);
+                    } catch (Error e) {
+                    }
+                }
+            }
+        }
+
         private bool save_before_quit (Widget ? w, Gdk.EventAny ? ev) {
             if (config.send_to_tray && w != null && tray != null) {
                 this.hide ();
                 return true;
             }
             if (config.umount_on_quit) {
-                foreach (var vault in config.vaults) {
-                    if (vault.is_mounted) {
-                        try {
-                            Gocrypt.unmount_vault (vault.mount_point);
-                        } catch (Error e) {
-                        }
-                    }
-                }
+                unmount_all ();
             }
             if (config.autosave_on_quit) {
                 if (config_path != null && config_path != "") {
