@@ -94,7 +94,6 @@ namespace Cryptor.UI {
                     }
                 });
             } catch (Error e) {
-                warning (e.message);
             }
         }
 
