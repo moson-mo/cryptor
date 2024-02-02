@@ -5,6 +5,8 @@ namespace Cryptor {
         public bool changes_made;
 
         public bool umount_on_quit { get; set; }
+        public bool unmount_on_sleep { get; set; }
+        public bool unmount_on_lock { get; set; }
         public bool autosave_on_quit { get; set; }
         public bool show_tray_icon { get; set; }
         public bool send_to_tray { get; set; }
@@ -15,6 +17,8 @@ namespace Cryptor {
         public Config () {
             changes_made = false;
             umount_on_quit = true;
+            unmount_on_sleep = false;
+            unmount_on_lock = false;
             autosave_on_quit = true;
             show_tray_icon = false;
             send_to_tray = false;
