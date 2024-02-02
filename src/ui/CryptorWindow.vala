@@ -12,9 +12,7 @@ namespace Cryptor.UI {
 
     [DBus (name = "org.freedesktop.login1.Session")]
     public interface Session : Object {
-        public abstract void SetIdleHint(bool hint) throws GLib.Error;
         public abstract signal void Lock();
-        public abstract signal void Unlock();
     }
 
     [GtkTemplate (ui = "/org/moson/cryptor/ui/CryptorWindow.ui")]
@@ -90,7 +88,7 @@ namespace Cryptor.UI {
                     "org.freedesktop.login1",
                     this.logind.GetSession(Environment.get_variable("XDG_SESSION_ID"))
                 );
-			    session.Lock.connect(() => {
+                session.Lock.connect(() => {
                     if (config.unmount_on_lock) {
                         unmount_all ();
                     }
