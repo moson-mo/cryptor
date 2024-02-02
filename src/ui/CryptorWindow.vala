@@ -437,7 +437,7 @@ namespace Cryptor.UI {
                 return true;
             }
             if (config.umount_on_quit) {
-                this.unmount_all ();
+                unmount_all ();
             }
             if (config.autosave_on_quit) {
                 if (config_path != null && config_path != "") {
